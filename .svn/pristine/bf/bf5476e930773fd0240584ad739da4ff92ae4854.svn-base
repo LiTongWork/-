@@ -1,0 +1,104 @@
+<view class="main" >
+    <view class="statu">
+        <view class="clothes">
+            <view class="clothes-class">
+                <view class="label">订单状态:</view>
+                <view class="clothe">{{msg.StatusTxt}}</view>
+            </view>
+            <view class="clothes-class">
+                <view class="label">订单编号:</view>
+                <view class="clothe">{{msg.IndentCode}}</view>
+            </view>
+            <view class="clothes-type">
+                <view class="label">下单时间:</view>
+                <view class="clothe">{{msg.StrTime}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="header">
+        <image class="logo" src="../../images/logo.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+        小浣熊洗衣
+    </view>
+    <scroll-view scroll-y="{{true}}" scroll-with-animation="{{true}}">
+        <view class="content">
+            <view class="clothes-list">
+                <!-- <scroll-view scroll-y="{{true}}" style="max-height: {{height}}rpx;">
+                <block wx:for="{{clothes}}">
+                
+                </scroll-view> -->
+                <block wx:for="{{clothes}}">
+                    <view class="clothes">
+                        <view class="clothes-class">
+                            <view class="label">衣服种类:</view>
+                            <view class="clothe">{{item.ParentName}}</view>
+                            <view class="price">￥{{item.ClothesPrice}}</view>
+                        </view>
+                        <view class="clothes-type">
+                            <view class="label">衣服类型:</view>
+                            <view class="clothe">{{item.ClotherName}}</view>
+                            <view class="number">x{{item.Number}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <!-- <view class="more">
+                展开更多
+                <image class="icon" src="../../images/down.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+            </view> -->
+            <view class="totalPrice">
+                订单总价:
+                <view class="price">
+                    <text style="font-size: 30rpx">￥</text>
+                    {{msg.TotalPrice}}
+                </view>
+            </view>
+           <view class="remark">
+                <view class="label" style="display: inline-block;">备注信息:</view>
+                <text style="line-height: 60rpx;" wx:if="{{msg.StudentRemark}}">{{msg.StudentRemark}}</text>
+                <text style="line-height: 60rpx;" wx:else>无</text>
+            </view>
+           <view class="remark">
+                <view class="label" style="display: inline-block;">拒收理由:</view>
+                <textarea class="textArea" bindinput="input" value="{{WroksRemark}}" placeholder="请填写拒收理由" maxlength="-1"></textarea>
+            </view>
+        </view>
+    </scroll-view>
+        <view class='rejection'>
+        <text class='btn btnCancel' bindtap='btnCancel'>取消</text>
+         <text class='btn' bindtap="onRejection" data-indentcode="{{msg.IndentCode}}">拒收</text>
+       
+         </view>
+</view>
+<view class="modal  {{ showModal ? 'show': ''}}" bindtap="closeModal">
+    <view class='canvas'>
+        <view class='openCode'>
+            <text>开柜二维码</text>
+            <image src='../../images/close.png' mode="aspectFit" lazy-load="false" bindtap='closeModal'></image>
+        </view>
+        <canvas style="width: 390rpx;height:390rpx"  id="canvasBox" canvas-id='canvas'></canvas>
+        <view class='logo'><image src='../../images/logo.png' mode='aspectFit' lazy-load='false'></image></view>
+    </view>
+</view>
+
+<!-- <view class="main"  wx:if="msg.Status === 9">
+    <view class="cancel">
+        您的订单已取消
+    </view>
+    <view class="statu">
+        <view class="clothes">
+            <view class="clothes-class">
+                <view class="label">订单状态:</view>
+                <view class="clothe red">{{msg.StatusTxt}}</view>
+            </view>
+            <view class="clothes-class">
+                <view class="label">订单编号:</view>
+                <view class="clothe">{{msg.IndentCode}}</view>
+            </view>
+            <view class="clothes-type">
+                <view class="label">下单时间:</view>
+                <view class="clothe">{{msg.StrTime}}</view>
+            </view>
+        </view>
+    </view>
+</view> -->

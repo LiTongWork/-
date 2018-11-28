@@ -1,0 +1,128 @@
+/**app.wxss**/
+page {
+  background-color: #f5f8fa; 
+  font-size: 30rpx;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}  
+input{
+  padding: 5rpx 5rpx 5rpx 10rpx;
+  margin: 20rpx 0;
+  height: 80rpx;
+  border: 1rpx solid #ddd;
+  /* border-radius: 10rpx; */
+}
+button{
+  margin: 20rpx 0;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.arrow{
+  position: relative;
+}
+.arrow:after{
+  content: ''; 
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 2rpx solid #333;
+  border-right: 2rpx solid #333;
+  position: absolute;
+  right: 20rpx;
+  transform: rotate(45deg);
+   top:30rpx;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+ .container {
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80rpx 0;
+}
+
+
+.logo{
+  width: 232rpx;
+  height: 232rpx;
+  margin-bottom: 80rpx;
+}
+
+.active{
+  background-color: #1890ff!important;
+}
+
+.registerText{
+  float: right;
+  color: #333;
+}
+.registerText .text{
+  color: #ff5a00;
+}
+
+
+/* 模态框 */
+.modal{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(7,17,27, 0.6);
+  z-index: 1000;
+}
+.modal .content{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  margin: 5% auto 0;
+  padding: 20rpx 0 50rpx;
+  background-color: #fff;
+}
+.modal .top{
+  flex: 0 0 70rpx;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 50rpx;
+}
+.modal .main{
+  flex: 1;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}
+.main .text {
+  display: block;
+  width: 100%;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ddd;
+}
+.main .footer {
+  flex: 0 0 60rpx;
+  text-align: center;
+}
+.footer .button {
+  text-align: center;
+  width: 240rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #fff;
+  background-color: #1890ff;
+  border-radius: 8rpx;
+}

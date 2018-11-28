@@ -1,0 +1,115 @@
+<!-- pages/order/order.wxml -->
+<image class="banner" src="../../images/banner.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+<view class='filtrate '>
+    <picker class='' bindchange="bindPickerChange" value="{{index}}" range="{{statusValue}}" range-key='status'>
+      <view class="picker">
+        {{searchStatus}}
+      </view>
+      <image src='../../images/down.png' mode="aspectFit" lazy-load="false"></image>
+    </picker>
+    <input class='' placeholder='请输入订单号' bindinput='inputSearch' value='{{inputValue}}' />
+    <button class='' bindtap='clickSearch'>搜索</button>
+    
+</view>
+
+<view class='list' wx:for="{{rows}}" wx:key="index"> 
+    <view class='top'>
+        <image class="smallLogo" src="../../images/logo.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+        <text>订单号</text>
+        <text class='orderNum'>{{item.IndentCode}}</text>
+        <text class='fr state' wx:if="{{item.Status===0}}">未支付</text>
+        <text class='fr state' wx:elif="{{item.Status===1}}">已支付</text>
+        <text class='fr state' wx:elif="{{item.Status===2}}">已寄</text>
+         <text class='fr state' wx:elif="{{item.Status===10}}">已派</text>
+        <text class='fr state' wx:elif="{{item.Status===3}}">已取</text>
+        <!-- <text class='fr state' wx:elif="{{item.Status===4}}">正在派送</text> -->
+        <text class='fr state' wx:elif="{{item.Status===4}}">{{item.ArkTaskCode}}</text>
+        <text class='fr state' wx:elif="{{item.Status===5}}">{{item.ArkTaskCode == '' ?'派送成功':'取件码 '+item.ArkTaskCode}}</text>
+        <text class='fr state' wx:elif="{{item.Status===6}}">已签收</text>
+        <text class='fr state' wx:elif="{{item.Status===7}}">{{'取件码 '+item.ArkTaskCode}}</text>
+        <!-- <text class='fr state' wx:elif="{{item.Status===8}}">退款</text> -->
+        <text class='fr state' wx:elif="{{item.Status===8}}">{{item.ArkTaskCode}}</text>
+        <text class='fr state' wx:elif="{{item.Status===9}}">{{item.ArkSendCode == '' ?'已退款':'取件码 '+item.ArkSendCode}}</text>
+       
+    </view>
+    <view class='middle'>
+        <view>
+            <text>学生：</text>
+            <text class='blue'>{{phoneNum}}</text>
+        </view>
+        <view class='clearfix' wx:if="{{item.Status>0 && item.WorkName}}">
+            <text class='fl'>工人：</text>
+            <text class='fl add'>{{item.WorkName}}  {{item.WorkPhone}}</text>
+        </view>
+        <view class='clearfix' wx:else>
+            <text class='fl'>工人：</text>
+            <text class='fl add'>未分配</text>
+        </view>
+        <view>
+            <text>下单时间：</text>
+            <text>{{item.TimeStr}}</text>
+        </view>
+    </view>
+    <view class='bottom' wx:if="{{item.Status===0}}">
+        <text class='fl' bindtap="pay" data-index="{{index}}">支付</text>
+        <text class='fr blue' bindtap="toWash" data-id="{{item.Id}}">修改</text>
+    </view>
+    <view class='bottom' wx:if="{{item.Status===1}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fl' bindtap='refund' data-indentCode="{{item.IndentCode}}">退款</text>
+        <text class='fr blue' bindtap="scan" data-indentCode="S{{item.IndentCode}}">寄件</text>
+    </view>
+    <view class='bottom' wx:if="{{item.Status===2}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fl' bindtap='refund' data-indentCode="{{item.IndentCode}}">退款</text>
+        <!-- <text class='fr blue' bindtap="scan" data-indentCode="S{{item.IndentCode}}">退件</text> -->
+    </view>
+    <view class='bottom' wx:if="{{item.Status===3}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fr blue' bindtap="openLogistics" data-index="{{index}}">物流</text>
+    </view>
+    <view class='bottom' wx:if="{{item.Status===4}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fr blue' bindtap="openLogistics" data-index="{{index}}">物流</text>
+    </view>
+    <view class='bottom' wx:if="{{item.Status===5}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fl' bindtap="openLogistics" data-index="{{index}}">物流</text>
+        <!-- <text class='fr blue' bindtap="scan" data-indentCode="S{{item.IndentCode}}">取件</text> -->
+    </view>
+    <view class='bottom' wx:if="{{item.Status===6}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fr blue' bindtap="openLogistics" data-index="{{index}}">物流</text>
+    </view>
+    <view class='bottom' wx:if="{{item.Status===7}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fl' bindtap="openLogistics" data-index="{{index}}">物流</text>
+        <!-- <text class='fr blue' bindtap="scan" data-indentCode="S{{item.IndentCode}}">退件</text> -->
+    </view>
+    <!-- 退款 -->
+    <view class='bottom' wx:if="{{item.Status===8}}">
+        <text class='fl blue' bindtap="openDetail" data-index="{{index}}">详情</text>
+    </view>
+    <view class='bottom' wx:if="{{item.Status===9}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fr blue' bindtap="openLogistics" data-index="{{index}}">物流</text>
+        <!-- <text class='fr blue' bindtap="scan" data-indentCode="O{{item.IndentCode}}">扫一扫</text> -->
+    </view>
+    <view class='bottom' wx:if="{{item.Status===10}}">
+        <text class='fl' bindtap="openDetail" data-index="{{index}}">详情</text>
+        <text class='fr blue' bindtap="openLogistics" data-index="{{index}}">物流</text>
+    </view>
+</view>
+<view class='notRows' wx:if="{{!rows.length}}">暂无订单</view>
+<!-- <view class='more'>查看更多订单</view> -->
+
+<view class="modal  {{ showModal ? 'show': ''}}" bindtap="closeModal">
+    <view class='canvas'>
+        <view class='openCode'>
+            <text>开柜二维码</text>
+            <image src='../../images/close.png' mode="aspectFit" lazy-load="false" bindtap='closeModal'></image>
+        </view>
+        <canvas style="width: 390rpx;height:390rpx"  id="canvasBox" canvas-id='canvas'></canvas>
+        <view class='logo'><image src='../../images/logo.png' mode='aspectFit' lazy-load='false'></image></view>
+    </view>
+</view>

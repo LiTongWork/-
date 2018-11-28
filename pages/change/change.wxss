@@ -1,0 +1,14 @@
+/* pages/change/change.wxss */
+form{
+  width: 670rpx
+}
+form button{
+  margin-top: 50rpx;
+  color: #fff;
+  background-color: #abd8f8;
+}
+
+.container input {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}

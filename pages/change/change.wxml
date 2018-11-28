@@ -1,0 +1,10 @@
+<!--pages/change/change.wxml-->
+<view class='container'>
+  <form>
+    <input type='text' password='true' bindinput='inputOld' placeholder='请输入旧密码' />
+    <input type='text' password='true' bindinput='inputNew1' placeholder='请输入新密码' />
+    <input type='text' password='true' bindinput='inputNew2' placeholder='请确认新密码' />
+    <button bindtap='submitClick' class="active" wx:if="{{(oldPsd && newPsd1 && newPsd2)}}">保存</button>
+    <button bindtap='submitClick' wx:else>保存</button>
+  </form>
+</view>

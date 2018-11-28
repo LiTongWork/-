@@ -1,0 +1,53 @@
+<view class="logistics">
+    <view class="top">
+        <view class="topList">
+            <text class="label">物流状态:</text>
+            <text class="msg">{{msg.IndentStr}}</text>
+        </view>
+        <view class="topList">
+            <text class="label">物流单号:</text>
+            <text class="msg">{{msg.IndentCode}}</text>
+        </view>
+        <view class="topList">
+            <text class="label">物流来源:</text>
+            <text class="msg">小浣熊洗衣科技</text>
+        </view>
+    </view>
+    <view class="path">
+        <block wx:for="{{logistics}}" wx:key="index">
+            <view class="path-list">
+                <view class="path-left">{{item.StrTime}}</view>
+                <view class="path-center">
+                    <view class="circle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="path-right">
+                    <!-- <view class="path-status">运输中</view> -->
+                    {{item.Remark}}
+                </view>
+            </view>
+        </block>
+        <!-- <view class="path-list">
+            <view class="path-left">10-22 21:46</view>
+            <view class="path-center">
+                <view class="circle"></view>
+                <view class="line"></view>
+            </view>
+            <view class="path-right">
+                <view class="path-status">运输中</view>
+                安徽省合肥市饱和工业园分部 已发出，下一站合肥转运中心
+            </view>
+        </view>
+        <view class="path-list">
+            <view class="path-left">10-22 21:46</view>
+            <view class="path-center">
+                <view class="circle"></view>
+                <view class="line"></view>
+            </view>
+            <view class="path-right">
+                <view class="path-status">运输中</view>
+                安徽省合肥市饱和工业园分部 已发出，下一站合肥转运中心
+            </view>
+        </view> -->
+    </view>
+</view>

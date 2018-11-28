@@ -1,0 +1,5 @@
+{
+   "navigationBarTitleText": "我的订单",
+   "navigationBarTitleStyle": "#333",
+   "enablePullDownRefresh": true
+}

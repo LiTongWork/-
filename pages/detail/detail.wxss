@@ -1,0 +1,171 @@
+page {
+    padding: 0;
+    height: 100%;
+}
+.main {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.statu{
+    flex: 0 0 172rpx;
+    box-sizing: border-box;
+    border-top: 1rpx solid #ddd;
+    padding: 0 30rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    font-size: 26rpx;
+}
+.statu .clothes {
+    border-bottom: none;
+}
+.statu .clothes .label{
+    flex: 0 0 120rpx;
+}
+
+.header {
+    flex: 0 0 80rpx;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 40rpx;
+    padding: 20rpx 30rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #ddd;
+    font-size: 26rpx;
+}
+.header .logo{
+    height: 40rpx;
+    width: 40rpx;
+    margin-right: 8rpx;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 130rpx;
+}
+.clothes-list{
+    flex: 0 0 auto;
+    padding: 0 30rpx;
+    font-size: 30rpx;
+    background-color: #fff;
+}
+.clothes{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #ddd;
+}
+.clothes-class, .clothes-type{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20rpx;
+    line-height: 30rpx;
+}
+.clothes-type{
+    margin-bottom: 0;
+}
+.clothes .label{
+    vertical-align: top;
+    flex: 0 0 140rpx;
+    color: #666;
+    margin-right: 6rpx;
+}
+.clothes .clothe{
+    flex: 1;
+}
+.clothes .price{
+    flex: 0 0 100rpx;
+    vertical-align: top;
+    text-align: right;
+    color: red;
+    font-size: 34rpx;
+}
+.clothes .number{
+    flex: 0 0 100rpx;
+    vertical-align: top;
+    text-align: right;
+    font-size: 26rpx;
+    color: #999;
+}
+.more{
+    flex: 0 0 83rpx;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    line-height: 82rpx;
+    font-size: 26rpx;
+    color: #999;
+    padding: 0 30rpx;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+
+}
+.more .icon{
+    vertical-align: top;
+    display: inline-block;
+    width: 24rpx;
+    height: 13rpx; 
+    margin-left: 4rpx;
+    margin-top: 37rpx;
+}
+.totalPrice{
+    flex: 0 0 100rpx;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 100rpx;
+    text-align: right;
+    font-size: 26rpx;
+    padding: 0 30rpx;
+    background-color: #fff;
+
+}
+.totalPrice .price{
+    display: inline-block;
+    color: red;
+    font-size: 40rpx;
+}
+.remark {
+    flex: 1;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    padding: 20rpx 30rpx;
+    background-color: #fff;
+}
+.remark .textArea {
+    width: 100%;
+}
+/* .pay {
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 110rpx;
+    margin-top: 20rpx;
+    padding: 8rpx 30rpx;
+    background-color: #fff;
+}
+.pay .btn{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    margin: 0;
+    border-radius: 50rpx; 
+    background-color: #018ff2;
+} */
+.cancel{
+    flex: 0 0 64rpx;
+    padding: 0 30rpx;
+    line-height: 64rpx;
+    border-top: 1rpx solid #ddd;
+    background-color: #fff;
+}
+.red{
+    color: red!important;
+}

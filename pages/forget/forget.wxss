@@ -1,0 +1,48 @@
+/* pages/register/register.wxss */
+input{
+    margin: 20rpx auto;
+    border:none;
+    border-bottom: 1rpx solid #999;
+    /* background-color: #fff */
+  }
+  .box3{
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #999;
+  }
+  .verify{
+    width: 400rpx;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .sendMsg{
+    width: 200rpx;
+    height: 100%;
+    text-align: center;
+  }
+  .sendMsg button{
+    float: right;
+    width: 200rpx;
+    margin-bottom: 0;
+    padding: 0;
+    color: #018ff2;
+    background-color: #f5f8fa;
+    border: none;
+    box-shadow: none;
+    font-size: 30rpx;
+    text-align: center;
+  }
+  .sendMsg button::after, .sendMsg button::before{
+    width: 0;
+    height: 0;
+  }
+  button.register{
+    margin-top: 80rpx;
+    color: #fff;
+    background-color: #abd8f8;
+  }
+  
+  
+  

@@ -1,0 +1,225 @@
+/* pages/order/order.wxss */
+page{
+  padding: 0 0 100rpx;
+  background-color: #f0f0f0;
+  font-size: 26rpx;
+}
+.banner{
+  width: 100%;
+  height: 314rpx;
+}
+
+/* 搜索开始 */
+.filtrate{
+  display: flex;
+  padding: 17rpx 30rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+   margin: 20rpx 0;
+}
+.filtrate picker{
+  width:  150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-right: 1rpx solid #ddd;
+  font-size: 24rpx;
+  position: relative;
+}
+.filtrate picker image{
+  width: 21rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+}
+.filtrate input{
+  width: 400rpx;
+  height: 60rpx;
+  margin: 0;
+  border: none;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+}
+.filtrate button{
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #0090ff;
+  border: none;
+  border-radius: 10rpx;
+  margin: 0;
+}
+
+/* 搜索结束 */
+.list{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  border: 1rpx solid #d5d5d5;
+  margin-top: 20rpx;
+}
+.smallLogo{
+  vertical-align: top;
+  margin: 10rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
+.list .top{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #d5d5d5;
+}
+.list .top cover-view{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+  margin: 0 10rpx;
+}
+.list .top text{
+  height: 100%;
+}
+.list .top .orderNum{
+  padding-left: 10rpx;
+  color: #a2a2a2;
+}
+
+.list .top .state{
+  padding: 0 10rpx 0 ;
+  position: relative;
+}
+.list .top .state.underway{
+  background-color: #ffdb28;
+  position: relative;
+}
+.list .top .state.underway::before{
+  content: '';
+  width: 0rpx;
+  height: 0rpx;
+  position: absolute;
+  left: -30rpx;
+  top: 0;
+  border-color:transparent #ffdb28 transparent transparent;
+  border-width: 80rpx 30rpx 0  0;
+  border-style: solid;
+  
+}
+.list .top .state text{
+  font-weight: bold;
+  margin-left: 10rpx;
+
+}
+.list .middle{
+  padding: 20rpx ;
+}
+.list .middle view{
+  line-height: 50rpx;
+
+}
+.list .middle text{
+  height: 100%;
+}
+.list .middle text.add{
+  max-width: 550rpx;
+}
+.list .blue{
+  color:#1890ff;
+}
+.list .bottom{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1rpx solid #d5d5d5;
+}
+.list .bottom text{
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.list .bottom text::after{
+    content: '';
+    position: absolute;
+    top: 20rpx;
+    right: 0;
+    width: 2rpx;
+    height: 40rpx;
+    background-color: #d5d5d5;
+}
+.list .bottom text:last-child::after{
+  width: 0;
+  height: 0;
+}
+.more{
+  background-color: #f0f0f0;
+  border: 2rpx solid #d5d5d5;
+  font-size: 26rpx;
+  color: #a2a2a2;
+  border-radius: 50rpx;
+  padding: 15rpx 25rpx;
+  margin-top: 30rpx;
+}
+
+
+.notRows{
+  margin-top: 100rpx;
+  text-align: center;
+  color: #666;
+  font-size: 30rpx;
+}
+.modal{
+  display: none;
+}
+.show {
+  display: block;
+}
+.canvas {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 600rpx;
+  height: 600rpx;
+  overflow: hidden;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+.canvas .openCode{
+  height: 92rpx;
+  line-height: 92rpx;
+  padding: 0 20rpx;
+  background-color: #f5f5f5;
+  /* font-size: 24rpx; */
+}
+.canvas .openCode image{
+  width: 92rpx;
+  height: 92rpx;
+  position: absolute;
+  right: 0rpx;
+  top: 0;
+}
+#canvasBox{
+  position: absolute;
+  top: 120rpx;
+  left: 50%;
+  margin-left: -195rpx;
+}
+
+.canvas .logo{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 50%;
+  top: 265rpx;
+  margin-left: -50rpx;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.canvas .logo image{
+  width: 100%;
+  height: 100%;
+}

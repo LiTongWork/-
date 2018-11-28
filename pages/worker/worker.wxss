@@ -1,0 +1,98 @@
+/* pages/index/index.wxss */
+page{
+  background-color: #fff;
+  padding: 0;
+}
+.container{
+  padding: 0;
+}
+.header {
+  display: flex;
+  width: 100%;
+  height: 360rpx;
+  background-color: #66bde9;
+  border-radius: 0  0  80rpx 0;
+}
+.header .name{
+  flex: 1;
+  color: #fff;
+}
+.name {
+  padding-left: 35rpx;
+  padding-top: 90rpx;
+}
+.name-data{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.phoneNum{
+  margin-top: 30rpx;
+  font-size: 32rpx;
+}
+.avatar {
+  overflow: hidden;
+  text-align: right;
+  margin-right: 80rpx;
+  margin-top: 80rpx;
+  height: 150rpx;
+  width: 150rpx;
+  border-radius:50%;
+}
+.avatar-data {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.list{
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 35rpx;
+  margin-top: 64rpx;
+}
+.list .arrow{
+  box-sizing: border-box;
+  width: 100%;
+  height: 120rpx;
+  margin-bottom: 40rpx;
+  padding-left: 30rpx;
+  line-height: 120rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 8rpx;
+  box-shadow: 0 0 3px 1px rgba(7, 17, 27, 0.1);
+  color: #888;
+}
+.arrow:after{
+ top: 50rpx;
+}
+.arrow .img {
+  display: inline-block;
+  vertical-align: top;
+  width: 64rpx;
+  height: 64rpx;
+  margin-top: 28rpx;
+  margin-right: 20rpx;
+}
+.logout{
+  width: 670rpx;
+  padding-top: 32rpx;
+}
+.logout button{
+  color: #fff;
+  background-color: #1890ff;
+}
+
+.toLogin{
+  font-size: 60rpx;
+}
+
+.toLogin .arrow {
+  height: 60rpx;
+  width: 60rpx;
+  vertical-align: top;
+  margin-top: 14rpx;
+}
+
+.toLogin .arrow::after {
+  display: none;
+}

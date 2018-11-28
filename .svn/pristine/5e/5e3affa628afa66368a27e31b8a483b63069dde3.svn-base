@@ -1,0 +1,90 @@
+.logistics{
+    padding: 20rpx 0;
+}
+.top{
+    background-color: #fff;
+    padding: 18rpx 20rpx;
+    border-radius: 8rpx;
+    margin-bottom: 44rpx;
+    box-shadow: 0 0 1rpx 6rpx #eee;
+}
+.topList {
+    line-height: 50rpx;
+    font-size: 26rpx;
+}
+.topList .label {
+    color: #666;
+    margin-right: 8rpx;
+}
+
+.path{
+    display: flex;
+    flex-direction: column;
+}
+.path-list{
+    display: flex;
+    height: 146rpx;
+    margin-bottom: 6rpx;
+}
+
+.path-list:last-child .line{
+    display: none;
+}
+.path-left{
+    flex: 0 0 80rpx;
+    color: #666;
+    line-height: 33rpx;
+    font-size: 22rpx;
+    text-align: center;
+    margin-top: -13rpx;
+}
+.path-center{
+    flex: 0 0 40rpx;
+    text-align: center;
+    margin-top: 8rpx;
+    overflow: hidden;
+}
+.path-center .circle {
+    box-sizing: border-box;
+    width: 20rpx;
+    height: 20rpx;
+    margin: 0 auto;
+    background-color: #dddddd;
+    border-radius: 50%;
+}
+.path-center .line {
+    height: 146rpx;
+    width: 1px;
+    margin-left: 50%;
+    margin-top: 4rpx;
+    transform: translateX(-50%);
+    border-left: 1px solid #ddd;
+}
+.path-right{
+    color: #666;
+    line-height: 33rpx;
+    font-size: 22rpx;
+}
+.path-right .path-status{
+    font-size: 26rpx;
+}
+
+.path-list:first-child .path-left {
+    color: #00a8ff;
+    font-weight: bold;
+}
+.path-list:first-child .path-center{
+    margin-top: 0;
+    padding-top: 6rpx;
+}
+.path-list:first-child .circle {
+    background-color: #00a8ff;
+    box-shadow: 0 0 1rpx 4rpx rgba(0, 168, 255, 0.6);
+}
+.path-list:first-child .line {
+    border-left-color: #00a8ff;
+    border-left-style: dashed;
+}
+.path-list:first-child .path-right {
+    color: #00a8ff;
+}

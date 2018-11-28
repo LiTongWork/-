@@ -1,0 +1,26 @@
+{
+  "pages": [
+    
+    "pages/login/login",
+    "pages/logistics/logistics",
+    "pages/wash/wash",
+    "pages/detail/detail",
+    "pages/pay/pay",
+    "pages/worker/worker",
+    "pages/order/order",
+    "pages/forget/forget",
+    "pages/change/change",
+    "pages/workerOrder/workerOrder",
+    "pages/index/index",
+    "pages/register/register",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/workerRejection/workerRejection"
+  ],
+  "window": {
+    "backgroundTextStyle": "drak",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "洗衣坊",
+    "navigationBarTextStyle": "black"
+  }
+}

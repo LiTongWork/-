@@ -1,0 +1,38 @@
+<!-- pages/index/index.wxml -->
+<view class='container'>
+  <view class="header" wx:if="{{isLogin}}">
+    <view class="name">
+      <open-data class="name-data" type="userNickName"></open-data>
+      <view class="phoneNum">{{phoneNum}}</view>
+    </view>
+    <view class="avatar">
+      <open-data class="avatar-data" type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class="header" wx:else>
+    <view class="name">
+      <view class="toLogin" bind:tap="logoutClick">
+        未登录
+        <image class="arrow" src="../../images/arrow.png" mode="aspectFit|aspectFill|widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <!-- <view class='arrow' bindtap='mineClick'>个人中心</view> -->
+    <!-- <view class='arrow' bindtap='washClick'>
+      <image class="img" src="../../images/xiyi.png" lazy-load="false"></image>
+      我要洗衣
+    </view> -->
+    <view class='arrow' bindtap='orderClick'>
+      <image class="img" src="../../images/order.png" lazy-load="false"></image>
+      我的订单
+    </view>
+    <view class='arrow' bindtap='changeClick'>
+      <image class="img" src="../../images/changePSW.png" lazy-load="false"></image>
+      修改密码
+    </view>
+  </view>
+  <view class='logout'>
+    <button bindtap='logoutClick'>退出</button>
+  </view>
+</view>
